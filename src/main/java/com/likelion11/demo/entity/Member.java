@@ -27,11 +27,4 @@ public class Member {
 
     @OneToMany(mappedBy = "member")
     private final List<WaitingForm> waitingForms = new ArrayList<>();
-
-    public Member(String username, String password, String email, String name) {
-        this.username = username;
-        this.password = password;
-        this.email = email;
-        this.name = name;
-    }
 }
