@@ -12,4 +12,8 @@ public class WaitingService {
     public Long WaitingCount() {
         return null;
     }
+
+    public Long getUser() {
+        return null;
+    }
 }
