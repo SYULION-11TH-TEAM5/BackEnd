@@ -1,5 +1,6 @@
 package com.likelion11.demo.error;
 
+import com.likelion11.demo.exception.HospitalNotFoundException;
 import com.likelion11.demo.exception.UserNotFoundException;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.extern.slf4j.Slf4j;
@@ -25,5 +26,12 @@ public class ErrorHandlingController {
     protected ErrorResponse handleMemberNotFoundException() {
         log.error("프론트로부터 잘못된 멤버 id가 전달되었습니다.");
         return buildError(ErrorCode.USER_NOT_FOUND);
+    }
+
+    @ExceptionHandler(HospitalNotFoundException.class)
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    protected ErrorResponse handleHospitalNotFoundException() {
+        log.error("프론트로부터 잘못된 병원 id가 전달되었습니다.");
+        return buildError(ErrorCode.HOSPITAL_NOT_FOUND);
     }
 }

@@ -22,6 +22,12 @@ public class Hospital {
     @Column(nullable = false)
     private String telephone;
 
+    @Column(nullable = false)
+    private String workingDay;
+
+    @Column(nullable = false)
+    private String businessHours;
+
     @OneToMany(mappedBy = "hospital")
     private final List<WaitingList> waitingLists = new ArrayList<>();
 

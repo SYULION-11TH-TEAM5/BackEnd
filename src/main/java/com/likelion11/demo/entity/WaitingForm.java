@@ -23,7 +23,10 @@ public class WaitingForm {
     private Hospital hospital;
 
     @Column(nullable = false)
-    private String content;
+    private String symptom;       //증상
+
+    @Column(nullable = false)
+    private String onset;       //발병일
 
     @Column(nullable = false)
     private Boolean isCompleted;
