@@ -1,12 +1,13 @@
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://waitdoc.cfvhg7vor7ne.ap-northeast-2.rds.amazonaws.com:3306/waitdoc
+    url: jdbc:mysql://waitdoc.cfvhg7vor7ne.ap-northeast-2.rds.amazonaws.com:3306/waitdoc?useSSL=false
     username: admin
     password:
 
   jpa:
     defer-datasource-initialization: true
     hibernate.ddl-auto: create
-    open-in-view: false
+    open-in-view: true
     show-sql: true
+

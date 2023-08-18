@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Reservation List</title>
+</head>
+<body>
+<h1>Reservation List</h1>
+<!-- 예약 정보를 테이블로 표시 -->
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Patient Name</th>
+        <th>Date and Time</th>
+    </tr>
+    <!-- reservations 배열의 각 예약 정보에 대해 반복 -->
+    <tr th:each="reservation : ${reservations}">
+        <!-- 각 열에 예약 정보를 표시 -->
+        <td th:text="${reservation.id}"></td> <!-- ID 열 -->
+        <td th:text="${reservation.patientName}"></td> <!-- 환자 이름 열 -->
+        <!-- 날짜 및 시간 데이터를 지정된 형식으로 포매팅하여 표시 -->
+        <td th:text="${#dates.format(reservation.dateTime, 'yyyy-MM-dd HH:mm:ss')}"></td> <!-- 날짜 및 시간 열 -->
+    </tr>
+</table>
+</body>
+</html>
