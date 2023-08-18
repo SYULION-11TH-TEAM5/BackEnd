@@ -79,4 +79,5 @@ public class ReservationController {
         reservationService.deleteReservation(id);
         return "redirect:/reservations";
     }
+
 }
