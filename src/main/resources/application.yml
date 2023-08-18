@@ -3,7 +3,7 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://waitdoc.cfvhg7vor7ne.ap-northeast-2.rds.amazonaws.com:3306/waitdoc
     username: admin
-    password: #password 입력하기
+    password: waitdocpassword
 
   jpa:
     defer-datasource-initialization: true
