@@ -8,13 +8,13 @@ import java.util.List;
 
 @Entity
 @Getter @Setter
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@NoArgsConstructor
 public class Member {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
-    private String username;    //로그인 시 ID
+    @Column(nullable = false, unique = true)
+    private String username;
 
     @Column(nullable = false)
     private String password;
@@ -23,8 +23,15 @@ public class Member {
     private String email;
 
     @Column(nullable = false)
-    private String name;        //사용자명
+    private String name;
 
     @OneToMany(mappedBy = "member")
     private final List<WaitingForm> waitingForms = new ArrayList<>();
+
+    public Member(String username, String password, String email, String name) {
+        this.username = username;
+        this.password = password;
+        this.email = email;
+        this.name = name;
+    }
 }
